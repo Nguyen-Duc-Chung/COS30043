@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>7.2P</title>
+	<meta charset="utf-8" >
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" >
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+	      rel="stylesheet" 
+		  integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
+		  crossorigin="anonymous">
+	<style>
+		td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+	</style>
+</head>
+<body>
+	<div id="app">
+      	<app-readjson></app-readjson>
+	</div>
+
+	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+	<script>  <!--   embedded this short js here, for easy distribution -->
+	const { createApp } = Vue
+	const app = createApp()
+	
+	app.component('app-readjson', {
+		data: function(){
+			return  {err:'',msg:''} 
+		},  
+		template: `	
+		<div class="container">
+			<h1>Unit</h1>
+		</div>
+		
+		 <div class="container">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Code</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">cp</th>
+                            <th scope="col">Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr v-for="m in msg">
+                            <td> {{m.code}} </td>
+                            <td> {{m.desc}} </td>
+                            <td> {{m.cp}} </td>
+                            <td> {{m.type}} </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+		
+		`,
+		
+		mounted() { //Called after the instance has been mounted
+			var self = this;
+			var url = 'units.json';
+
+			fetch(url)     //javascript fetch api  
+			.then( response =>{
+			  //turning the response into the usable data
+			  return response.json( );
+			})
+			.then( data =>{
+			  //This is the data you wanted to get from url
+			  self.msg=data;
+			})
+			.catch(error => {
+			  self.err=error
+			});
+		 
+  		}
+})
+app.mount('#app')
+	</script>
+</body>
+</html>

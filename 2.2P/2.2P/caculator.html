@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <title>Template that uses Bootstrap</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    >
+    <style>
+  
+      p {
+        padding-top:10px;
+        padding-bottom:10px;
+        border-radius: 10px;  
+        text-align: center;
+      }
+      div.container {
+        border-radius: 15px;
+        background: linear-gradient(320deg,#10ac96,#d07c64 );
+        max-width: 540px;
+        margin-top: 10rem;
+        padding-top: 15px;
+        box-shadow: 5px 10px 18px #160e0e9e;
+      }
+      .num {
+        background-color: white;
+      }
+      #result {
+        background-color: white;
+        text-align: left;
+      }
+      .arith_key {
+        background-color: #01e8d4;
+      }
+      .spec_func {
+        background-color: #e55756;
+      }
+      .col-3{
+        padding-top:10px;
+        padding-bottom:10px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-12"><p id="result">0</p></div>
+      </div>
+      <div class="row ">
+        <div class="col-3 "><p class="spec_func">MC</p></div>
+        <div class="col-3"><p class="spec_func">M+</p></div>
+        <div class="col-3"><p class="spec_func">M-</p></div>
+        <div class="col-3"><p class="spec_func">MR</p></div>
+      </div>
+      <div class="row">
+        <div class="col-3"><p class="spec_func">AC</p></div>
+        <div class="col-3"><p class="spec_func">√x</p></div>
+        <div class="col-3"><p class="spec_func">%</p></div>
+        <div class="col-3"><p class="arith_key">÷</p></div>
+      </div>
+      <div class="row">
+        <div class="col-3"><p class="num">7</p></div>
+        <div class="col-3"><p class="num">8</p></div>
+        <div class="col-3"><p class="num">9</p></div>
+        <div class="col-3"><p class="arith_key">x</p></div>
+      </div>
+      <div class="row">
+        <div class="col-3"><p class="num">4</p></div>
+        <div class="col-3"><p class="num">5</p></div>
+        <div class="col-3"><p class="num">6</p></div>
+        <div class="col-3"><p class="arith_key">-</p></div>
+      </div>
+      <div class="row">
+        <div class="col-3"><p class="num">1</p></div>
+        <div class="col-3"><p class="num">2</p></div>
+        <div class="col-3"><p class="num">3</p></div>
+        <div class="col-3"><p class="arith_key">+</p></div>
+      </div>
+      <div class="row">
+        <div class="col-3"><p class="num">0</p></div>
+        <div class="col-3"><p class="num">.</p></div>
+        <div class="col-3"><p class="num">+/-</p></div>
+        <div class="col-3"><p class="arith_key">=</p></div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
